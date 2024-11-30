@@ -57,6 +57,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // To use LiveData.observeAsState()
+    // To use LiveData.observeAsState():
     implementation(libs.androidx.runtime.livedata)
+
+    // Use Retrofit with Gson converter:
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
 }

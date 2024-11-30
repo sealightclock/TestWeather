@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
         weatherViewModel.weather.observe(this) {
             Log.d(TAG, "onCreate: viewModel.users.observe: $it")
         }
-        
+
         setContent {
             TestWeatherTheme {
                 WeatherView(weatherViewModel)
