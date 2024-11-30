@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+private var apiKey = "cc9a943e9b0082101297ca40b03f1f83"
+
 class WeatherViewModel : ViewModel() {
     private val _weatherState = MutableStateFlow<WeatherResponse?>(null)
     val weatherState: StateFlow<WeatherResponse?> = _weatherState
@@ -15,7 +17,7 @@ class WeatherViewModel : ViewModel() {
     fun fetchWeather(city: String) {
         viewModelScope.launch {
             try {
-                val response = RetrofitInstance.weatherApi.getWeather(city, "YOUR_API_KEY")
+                val response = RetrofitInstance.weatherApi.getWeather(city, apiKey)
                 _weatherState.value = response
             } catch (e: Exception) {
                 e.printStackTrace()

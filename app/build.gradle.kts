@@ -63,4 +63,7 @@ dependencies {
     // Use Retrofit with Gson converter:
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
+
+    // for run-time permissions:
+    implementation(libs.accompanist.permissions)
 }
