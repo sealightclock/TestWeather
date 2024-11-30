@@ -5,37 +5,25 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
-import com.example.jonathan.testweather.model.DataSourceType
 import com.example.jonathan.testweather.ui.theme.TestWeatherTheme
-import com.example.jonathan.testweather.view.WeatherView
-import com.example.jonathan.testweather.viewmodel.Weather0ViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.example.jonathan.testweather.view.WeatherScreen
+import com.example.jonathan.testweather.viewmodel.WeatherViewModel
 
 private const val TAG = "TW: MainActivity"
 
 class MainActivity : ComponentActivity() {
-    private lateinit var weatherViewModel: Weather0ViewModel
+    private lateinit var weatherViewModel: WeatherViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d(TAG, "onCreate")
+
         super.onCreate(savedInstanceState)
 
-        weatherViewModel = ViewModelProvider(this)[Weather0ViewModel::class.java]
-
-        // Update ViewModel:
-        weatherViewModel.viewModelScope.launch(Dispatchers.IO) {
-            weatherViewModel.getData(DataSourceType.TEST)
-        }
-
-        // Observe ViewModel changes (for debugging purposes only):
-        weatherViewModel.weather0.observe(this) {
-            Log.d(TAG, "onCreate: viewModel.users.observe: $it")
-        }
+        weatherViewModel = ViewModelProvider(this)[WeatherViewModel::class.java]
 
         setContent {
             TestWeatherTheme {
-                WeatherView(weatherViewModel)
+                WeatherScreen(weatherViewModel)
             }
         }
     }
