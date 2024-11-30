@@ -6,17 +6,17 @@ enum class DataSourceType {
 }
 
 class WeatherRepository {
-    fun fetchWeatherFromTest(): Weather {
+    fun fetchWeatherFromTest(): Weather0 {
         // TODO: This is a test:
-        return Weather(
+        return Weather0(
             "San Jose",
             "20.1"
         )
     }
 
-    fun fetchWeatherFromWebByRetrofit(): Weather {
+    fun fetchWeatherFromWebByRetrofit(): Weather0 {
         // TODO: This is a test:
-        return Weather(
+        return Weather0(
             "San Jose",
             "20.1"
         )

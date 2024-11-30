@@ -1,6 +1,6 @@
 package com.example.jonathan.testweather.model
 
-data class Weather(
+data class Weather0(
     val city: String,
     val temperature: String
 )
