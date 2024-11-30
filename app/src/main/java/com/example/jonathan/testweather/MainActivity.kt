@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.jonathan.testweather.model.DataSourceType
 import com.example.jonathan.testweather.ui.theme.TestWeatherTheme
 import com.example.jonathan.testweather.view.WeatherView
 import com.example.jonathan.testweather.viewmodel.WeatherViewModel
@@ -19,21 +20,19 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
 
         weatherViewModel = ViewModelProvider(this)[WeatherViewModel::class.java]
 
         // Update ViewModel:
         weatherViewModel.viewModelScope.launch(Dispatchers.IO) {
-            weatherViewModel.loadDataFromRepository()
+            weatherViewModel.getData(DataSourceType.TEST)
         }
 
         // Observe ViewModel changes (for debugging purposes only):
         weatherViewModel.weather.observe(this) {
             Log.d(TAG, "onCreate: viewModel.users.observe: $it")
         }
-
-
+        
         setContent {
             TestWeatherTheme {
                 WeatherView(weatherViewModel)
