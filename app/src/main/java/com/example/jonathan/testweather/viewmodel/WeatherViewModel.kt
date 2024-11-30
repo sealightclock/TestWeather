@@ -1,8 +1,10 @@
-package com.example.jonathan.testweather
+package com.example.jonathan.testweather.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.jonathan.testweather.model.Weather
+import com.example.jonathan.testweather.model.WeatherRepository
 
 class WeatherViewModel : ViewModel() {
     private val repository = WeatherRepository()

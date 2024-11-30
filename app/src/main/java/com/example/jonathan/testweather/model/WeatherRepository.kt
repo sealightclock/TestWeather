@@ -1,6 +1,4 @@
-package com.example.jonathan.testweather
-
-data class Weather(val city: String, val temperature: String)
+package com.example.jonathan.testweather.model
 
 class WeatherRepository {
     fun getWeatherFromWeb(): Weather {
