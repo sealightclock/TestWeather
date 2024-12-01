@@ -8,7 +8,6 @@ import androidx.activity.compose.setContent
 import androidx.lifecycle.ViewModelProvider
 import com.example.jonathan.testweather.ui.theme.TestWeatherTheme
 import com.example.jonathan.testweather.view.MultiPermissionScreen
-import com.example.jonathan.testweather.view.WeatherScreen
 import com.example.jonathan.testweather.viewmodel.WeatherViewModel
 
 private const val TAG = "TW: MainActivity"

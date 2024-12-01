@@ -20,13 +20,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.jonathan.testweather.model.DataSourceType
 import com.example.jonathan.testweather.viewmodel.WeatherViewModel
 
 @Composable
 fun WeatherScreen(viewModel: WeatherViewModel) {
     val weatherState by viewModel.weatherState.collectAsState()
 
-    var city by remember { mutableStateOf("London") }
+    var city by remember { mutableStateOf("Irvine, CA, USA") }
 
     Column(
         modifier = Modifier
@@ -42,7 +43,11 @@ fun WeatherScreen(viewModel: WeatherViewModel) {
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { viewModel.getData(city) }) {
+        Button(onClick = { viewModel.getData(
+            city,
+            dataSourceType = DataSourceType.WEB_BY_RETROFIT
+            //dataSourceType = DataSourceType.TEST
+        ) }) {
             Text("Get Weather")
         }
         Spacer(modifier = Modifier.height(16.dp))
