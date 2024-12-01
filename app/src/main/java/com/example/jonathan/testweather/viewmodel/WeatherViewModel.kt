@@ -13,7 +13,7 @@ class WeatherViewModel : ViewModel() {
     private val _weatherState = MutableStateFlow<WeatherResponse?>(null)
     val weatherState: StateFlow<WeatherResponse?> = _weatherState
 
-    fun fetchWeather(city: String) {
+    fun getData(city: String) {
         viewModelScope.launch {
             try {
                 val response = RetrofitInstance.weatherApi.getWeather(city, MY_APK_KEY)

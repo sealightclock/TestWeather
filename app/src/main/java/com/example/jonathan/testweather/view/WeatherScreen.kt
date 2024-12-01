@@ -42,7 +42,7 @@ fun WeatherScreen(viewModel: WeatherViewModel) {
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { viewModel.fetchWeather(city) }) {
+        Button(onClick = { viewModel.getData(city) }) {
             Text("Get Weather")
         }
         Spacer(modifier = Modifier.height(16.dp))
