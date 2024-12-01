@@ -54,8 +54,8 @@ fun WeatherScreen(viewModel: WeatherViewModel) {
         weatherState?.let { weather ->
             Text(
                 text = "Temperature: ${weather.main.temp}°C\n" +
-                        "Humidity: ${weather.main.humidity}%\n",
-                        //"Condition: ${weather.desc.firstOrNull()?.description.orEmpty()}",
+                        "Humidity: ${weather.main.humidity}%\n" +
+                        "Condition: ${weather.weather.firstOrNull()?.description.orEmpty()}",
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )

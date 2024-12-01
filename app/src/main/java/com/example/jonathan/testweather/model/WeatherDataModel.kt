@@ -11,6 +11,6 @@ data class Weather(
 
 data class WeatherResponse(
     val main: Main,
-    val desc: List<Weather>
+    val weather: List<Weather>
 )
 

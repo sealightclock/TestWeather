@@ -15,7 +15,8 @@ enum class DataSourceType {
 class WeatherRepository {
     fun fetchWeatherFromTest(): WeatherResponse {
         return WeatherResponse(
-            Main(11.1111, 22), emptyList()
+            Main(11.1111, 22),
+            listOf(Weather("Test weather condition"))
         )
     }
 
