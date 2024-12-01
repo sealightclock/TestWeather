@@ -51,11 +51,11 @@ fun WeatherScreen(viewModel: WeatherViewModel) {
             Text("Get Weather")
         }
         Spacer(modifier = Modifier.height(16.dp))
-        weatherState?.let { weather ->
+        weatherState?.let {
             Text(
-                text = "Temperature: ${weather.main.temp}°C\n" +
-                        "Humidity: ${weather.main.humidity}%\n" +
-                        "Condition: ${weather.weather.firstOrNull()?.description.orEmpty()}",
+                text = "Temperature: ${it.main.temp}°C\n" +
+                        "Humidity: ${it.main.humidity}%\n" +
+                        "Condition: ${it.weather.firstOrNull()?.description.orEmpty()}",
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
