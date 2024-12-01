@@ -1,16 +1,16 @@
 package com.example.jonathan.testweather.model
 
-data class WeatherMain(
+data class Main(
     val temp: Double,
     val humidity: Int
 )
 
-data class WeatherDesc(
+data class Weather(
     val description: String
 )
 
 data class WeatherResponse(
-    val main: WeatherMain,
-    val desc: List<WeatherDesc>
+    val main: Main,
+    val desc: List<Weather>
 )
 
