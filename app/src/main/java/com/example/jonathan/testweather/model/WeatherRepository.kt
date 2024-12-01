@@ -15,15 +15,15 @@ enum class DataSourceType {
 class WeatherRepository {
     fun fetchWeatherFromTest(): WeatherResponse {
         return WeatherResponse(
-            Main(11.1111, 22),
-            listOf(Weather("Test weather condition"))
+            WeatherMain(11.1111, 22),
+            listOf(WeatherDesc("Test weather condition"))
         )
     }
 
     suspend fun fetchWeatherFromWebByRetrofit(city: String): WeatherResponse {
         // Default value:
         var response = WeatherResponse(
-            Main(0.0, 0),
+            WeatherMain(0.0, 0),
             emptyList()
         )
 
