@@ -12,6 +12,10 @@ import com.example.jonathan.testweather.viewmodel.WeatherViewModel
 
 private const val TAG = "TW: MainActivity"
 
+val permissions = listOf(
+    android.Manifest.permission.ACCESS_FINE_LOCATION
+)
+
 class MainActivity : ComponentActivity() {
     private lateinit var weatherViewModel: WeatherViewModel
 
@@ -25,7 +29,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             TestWeatherTheme {
-                MultiPermissionScreen(this, weatherViewModel)
+                MultiPermissionScreen(permissions,this, weatherViewModel)
             }
         }
     }

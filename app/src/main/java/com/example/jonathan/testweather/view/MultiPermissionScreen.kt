@@ -26,11 +26,7 @@ private var isPermissionsDialogLaunched = false
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
 // Do not remove context!
-fun MultiPermissionScreen(context: Context, viewModel: WeatherViewModel) {
-    val permissions = listOf(
-        android.Manifest.permission.ACCESS_FINE_LOCATION
-    )
-
+fun MultiPermissionScreen(permissions: List<String>, context: Context, viewModel: WeatherViewModel) {
     val multiplePermissionsState = rememberMultiplePermissionsState(permissions)
 
     Column(

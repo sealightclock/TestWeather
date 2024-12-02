@@ -38,14 +38,19 @@ fun WeatherScreen(viewModel: WeatherViewModel) {
     ) {
         TextField(
             value = city,
-            onValueChange = { city = it },
-            label = { Text("Enter City") },
+            onValueChange = {
+                city = it
+            },
+            label = {
+                Text("Enter City")
+            },
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { viewModel.getData(
             city,
             dataSourceType = DataSourceType.WEB_BY_RETROFIT
+            // TODO: Find a better way to test different data sources:
             //dataSourceType = DataSourceType.TEST
         ) }) {
             Text("Get Weather")

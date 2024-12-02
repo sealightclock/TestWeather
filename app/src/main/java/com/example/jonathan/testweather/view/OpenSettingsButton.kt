@@ -19,6 +19,6 @@ fun OpenSettingsButton(context: Context) {
         }
         context.startActivity(intent)
     }) {
-        Text("Open App Settings")
+        Text("Open App Settings to grant permissions")
     }
 }
